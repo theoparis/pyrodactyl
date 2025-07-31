@@ -1,0 +1,32 @@
+[package]
+name = "pyrodactyl-api"
+version = "0.1.0"
+edition = "2024"
+
+[[bin]]
+name = "pyrodactyl-api"
+path = "main.rs"
+
+[dependencies]
+axum = "0.8.4"
+axum-h3 = "0.0.4"
+clap = { version = "4.5.43", features = ["derive"] }
+h3-util = { version = "0.0.4", default-features = false, features = ["quinn"] }
+quinn = { version = "0.11.8", default-features = false, features = [
+    "rustls-ring",
+    "runtime-tokio",
+] }
+rcgen = { version = "0.14.3", default-features = false, features = ["ring"] }
+sea-orm = { version = "1.1.14", features = [
+    "runtime-tokio-rustls",
+    "sqlx-sqlite",
+    "macros",
+] }
+tokio = { version = "1.47.1", features = [
+    "rt-multi-thread",
+    "macros",
+    "net",
+    "fs",
+] }
+tracing = "0.1.41"
+tracing-subscriber = { version = "0.3.19", features = ["env-filter"] }

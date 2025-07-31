@@ -48,3 +48,10 @@ nix/docker/maria/mariadb_data/
 nix/mariadb/
 wings/
 mariadb_data/
+
+/buck-out
+target/
+rust-project.json
+*.cert
+*.key
+*.sqlite
